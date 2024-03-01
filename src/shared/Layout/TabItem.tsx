@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
+import { twMerge } from 'tailwind-merge'
+import { clsx } from 'clsx'
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
   href: string
   label: string
 }
-const TabItem = ({ href, label }: Props) => {
+const TabItem = ({ href, label, className, ...rest }: Props) => {
   const [currentPath, setCurrentPath] = useState(window.location.hash)
 
   useEffect(() => {
@@ -22,9 +24,12 @@ const TabItem = ({ href, label }: Props) => {
   return (
     <a
       href={href}
-      className={`px-4 py-4 sm:py-0 sm:hover:underline ${
-        currentPath === href && 'text-biscay-300'
-      } `}
+      className={twMerge(
+        clsx('px-4 py-4 sm:py-0 sm:hover:underline', className, {
+          'text-biscay-300': currentPath === href,
+        })
+      )}
+      {...rest}
     >
       {label}
     </a>

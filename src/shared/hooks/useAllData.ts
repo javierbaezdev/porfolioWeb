@@ -1,27 +1,9 @@
-import { useState } from 'react'
-import { getItem, setItem } from '@/shared/services/localStorage'
-import { DATA, KEY_LANGUAGE_LOCAL_STORAGE } from '@/shared/constants'
-import { Language } from '@/shared/types/language'
+import { DATA } from '@/shared/constants'
+import { useAppStore } from '@/store'
 
 const useAllData = () => {
-  const [allData] = useState(() => {
-    const currentLanguageLocalStorage = getItem(
-      KEY_LANGUAGE_LOCAL_STORAGE
-    ) as Language
-
-    if (currentLanguageLocalStorage) {
-      return DATA[currentLanguageLocalStorage]
-    }
-
-    setItem(KEY_LANGUAGE_LOCAL_STORAGE, 'ES')
-    return DATA['ES']
-  })
-
-  const onSelectedLanguage = (language: Language) => {
-    setItem(KEY_LANGUAGE_LOCAL_STORAGE, language)
-  }
-
-  return { allData, onSelectedLanguage }
+  const language = useAppStore((store) => store.language)
+  return { allData: DATA[language] }
 }
 
 export default useAllData
