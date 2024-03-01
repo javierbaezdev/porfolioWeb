@@ -16,6 +16,7 @@ interface Experience {
   COMPANY: string
   DESCRIPTION: string
   DATE_RANGE: string
+  IMAGE: string
 }
 
 interface Project {

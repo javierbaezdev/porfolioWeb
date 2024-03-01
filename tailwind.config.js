@@ -1,3 +1,5 @@
+import animations from '@midudev/tailwind-animations'
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
@@ -60,20 +62,20 @@ export default {
         },
 
         bunker: {
-          50: '#f5f7fa',
-          100: '#e9eef5',
-          200: '#cedce9',
-          300: '#a3bed6',
-          400: '#729cbe',
-          500: '#5080a7',
-          600: '#3e668b',
-          700: '#335271',
-          800: '#2d475f',
-          900: '#2a3d50',
-          950: '#0e141b', //dark mode
+          50: '#f5f6f6',
+          100: '#e5e8e8',
+          200: '#ced3d3',
+          300: '#abb3b5',
+          400: '#828c8e',
+          500: '#677173',
+          600: '#586062',
+          700: '#4b5153',
+          800: '#424748',
+          900: '#3a3e3f',
+          950: '#1d1f20', //dark mode
         },
       },
     },
   },
-  plugins: [],
+  plugins: [animations],
 }

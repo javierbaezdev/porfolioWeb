@@ -1,37 +1,21 @@
-const TEXT_COLOR = 'bunker-700'
+import { useAllData } from '../hooks'
+import TabItem from './TabItem'
 
 const NavBar = () => {
+  const { allData } = useAllData()
+  console.log({ allData })
   return (
-    <header className={`flex justify-center items-center text-${TEXT_COLOR}`}>
-      <nav
-        className={`gap-y-4 rounded-md py-4 static flex flex-row items-center sm:divide-x sm:divide-${TEXT_COLOR} sm:divide-dashed sm:py-0`}
-        aria-label='Main menu'
-      >
-        <a
-          href='/'
-          className='px-4 py-4 sm:py-0 sm:hover:underline'
-        >
-          Home
-        </a>
-        <a
-          href='/posts/'
-          className='px-4 py-4 sm:py-0 sm:hover:underline'
-        >
-          Blog
-        </a>
-        <a
-          href='/talks/'
-          className='px-4 py-4 sm:py-0 sm:hover:underline'
-        >
-          Speaking
-        </a>
-        <a
-          href='https://notes.thegiftcode.dev'
-          className='px-4 py-4 sm:py-0 sm:hover:underline'
-        >
-          Notes
-        </a>
+    <header className='flex justify-center items-center text-bunker-400 animate-slide-in-top'>
+      <nav className='gap-y-4 rounded-md py-4 static hidden md:flex flex-row items-center sm:divide-x sm:divide-bunker-400 sm:divide-dashed sm:py-0  '>
+        {allData?.tabs?.map((item) => (
+          <TabItem
+            key={item.href}
+            href={item.href}
+            label={item.label}
+          />
+        ))}
       </nav>
+      {/* _ TODO: burger menu */}
     </header>
   )
 }

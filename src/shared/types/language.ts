@@ -1,1 +1,1 @@
-export type language = 'ES'
+export type Language = 'ES'

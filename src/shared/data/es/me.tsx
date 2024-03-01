@@ -33,6 +33,7 @@ export const ME: Me = {
       DESCRIPTION:
         'Participé en varios proyectos full stack donde desarrollé soluciones personalizadas para empresas. Estas aplicaciones fueron diseñadas para ser escalables y eficientes, utilizando servicios en la nube para optimizar su rendimiento y escalabilidad. Mi papel abarcó desde la conceptualización hasta la implementación y mantenimiento de estas soluciones, asegurando que cumplieran con los requisitos del cliente y proporcionaran un valor añadido a sus operaciones comerciales.',
       DATE_RANGE: 'sept/2021 - feb/2024',
+      IMAGE: '',
     },
     {
       POSITION: 'Desarrollador Full Stack',
@@ -40,6 +41,7 @@ export const ME: Me = {
       DESCRIPTION:
         'Responsable de desarrollar una aplicación full stack que integraba una Raspberry Pi con interruptores inalámbricos. Esta aplicación tenía como objetivo ayudar a niños con dificultades de comunicación limitada a expresarse de manera más efectiva. Mi papel fue diseñar, desarrollar y mantener esta solución tecnológica, asegurando su funcionalidad y accesibilidad para los usuarios finales.',
       DATE_RANGE: 'ago/2021 - dic/2021',
+      IMAGE: '',
     },
   ],
   PROJECTS: [

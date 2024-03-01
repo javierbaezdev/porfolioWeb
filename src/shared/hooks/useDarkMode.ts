@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getItem } from '@/shared/services/localStorage'
+import { getItem, setItem } from '@/shared/services/localStorage'
 import { KEY_THEME_MODE_LOCAL_STORAGE } from '@/shared/constants'
 
 type Mode = 'DARK' | 'LIGHT' | 'SYSTEM'
@@ -18,6 +18,7 @@ const useDarkMode = () => {
     if (isDark) {
       return 'dark'
     }
+    setItem(KEY_THEME_MODE_LOCAL_STORAGE, 'light')
     return 'light'
   })
 
@@ -46,7 +47,8 @@ const useDarkMode = () => {
   useEffect(() => {
     if (themeMode === 'dark') {
       document.querySelector('html')?.classList.add('dark')
-    } else {
+    }
+    if (themeMode === 'light') {
       document.querySelector('html')?.classList.remove('dark')
     }
   }, [themeMode])
