@@ -1,4 +1,4 @@
-const MenuDeep = () => {
+const MenuDeep = ({ ...props }) => {
   return (
     <svg
       width='24'
@@ -10,6 +10,7 @@ const MenuDeep = () => {
       strokeLinecap='round'
       strokeLinejoin='round'
       className='animate-fade-in'
+      {...props}
     >
       <path
         stroke='none'

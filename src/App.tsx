@@ -13,6 +13,15 @@ const App = () => {
     if (themeMode === THEME_MODE_DICT.LIGHT) {
       document.querySelector('html')?.classList.remove('dark')
     }
+    if (themeMode === THEME_MODE_DICT.SYSTEM) {
+      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+      if (isDark) {
+        document.querySelector('html')?.classList.add('dark')
+      } else {
+        document.querySelector('html')?.classList.remove('dark')
+      }
+    }
   }, [themeMode])
 
   return (

@@ -1,15 +1,14 @@
-const X = ({ ...props }) => {
+const Sun = ({ ...props }) => {
   return (
     <svg
       width='24'
       height='24'
       viewBox='0 0 24 24'
-      strokeWidth='1.5'
+      strokeWidth='2'
       stroke='currentColor'
       fill='none'
       strokeLinecap='round'
       strokeLinejoin='round'
-      className='animate-fade-in'
       {...props}
     >
       <path
@@ -17,10 +16,10 @@ const X = ({ ...props }) => {
         d='M0 0h24v24H0z'
         fill='none'
       />
-      <path d='M18 6l-12 12' />
-      <path d='M6 6l12 12' />
+      <path d='M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0' />
+      <path d='M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7' />
     </svg>
   )
 }
 
-export default X
+export default Sun

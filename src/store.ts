@@ -31,25 +31,8 @@ export const useAppStore = create<State>()(
             const { themeMode } = get()
 
             if (themeMode !== mode) {
-              let finalMode = themeMode
-
-              if (mode === THEME_MODE_DICT.SYSTEM) {
-                const isDark = window.matchMedia(
-                  '(prefers-color-scheme: dark)'
-                ).matches
-                finalMode = isDark
-                  ? THEME_MODE_DICT.DARK
-                  : THEME_MODE_DICT.LIGHT
-              }
-              if (mode === THEME_MODE_DICT.DARK) {
-                finalMode = THEME_MODE_DICT.DARK
-              }
-              if (mode === THEME_MODE_DICT.LIGHT) {
-                finalMode = THEME_MODE_DICT.LIGHT
-              }
-
               set({
-                themeMode: finalMode,
+                themeMode: mode,
               })
             }
           },
