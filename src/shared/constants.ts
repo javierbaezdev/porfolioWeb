@@ -7,6 +7,8 @@ import { ThemeMode } from '@/shared/types/themeMode'
 
 /* --- */
 
+export const SECTIONS_IDS = ['experience', 'projects', 'about-me', 'contact']
+
 export const THEME_MODE_VARIABLES: Record<ThemeMode, ThemeMode> = {
   DARK: 'DARK',
   LIGHT: 'LIGHT',

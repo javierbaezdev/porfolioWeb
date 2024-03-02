@@ -15,9 +15,11 @@ const TabItem = ({ href, label, className, ...rest }: Props) => {
     }
 
     window.addEventListener('hashchange', handleHashChange)
+    window.addEventListener('scroll', handleHashChange)
 
     return () => {
       window.removeEventListener('hashchange', handleHashChange)
+      window.removeEventListener('scroll', handleHashChange)
     }
   }, [])
 

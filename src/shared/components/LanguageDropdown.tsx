@@ -30,7 +30,7 @@ const LanguageDropdown = ({ className, ...rest }: Props) => {
     <div className=''>
       <div className='flex items-center'>
         <button
-          className='bg-transparent'
+          className='bg-transparent hover:scale-110'
           onClick={onToggle}
         >
           {LANGUAGE_DICT[language].find((item) => item.key === language)?.icon}
@@ -41,7 +41,7 @@ const LanguageDropdown = ({ className, ...rest }: Props) => {
             ref={refDropdown}
             className={twMerge(
               clsx(
-                'fixed top-14 right-2 w-auto bg-bunker-900 text-bunker-300 rounded-md',
+                'fixed w-auto bg-bunker-900 text-bunker-300 rounded-md',
                 className
               )
             )}

@@ -1,7 +1,8 @@
 import Layout from '@/shared/Layout'
 import { useAppStore } from '@/store'
 import { useEffect } from 'react'
-import { THEME_MODE_VARIABLES } from '@/shared/constants'
+import { SECTIONS_IDS, THEME_MODE_VARIABLES } from '@/shared/constants'
+import { Experience, Projects, AboutMe, Contact } from './pages/sections'
 
 const App = () => {
   const themeMode = useAppStore((store) => store.themeMode)
@@ -24,9 +25,51 @@ const App = () => {
     }
   }, [themeMode])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // Obtener las posiciones de todas las secciones
+      const positions = SECTIONS_IDS.map((sectionId) => {
+        const section = document.getElementById(sectionId)
+        if (section) {
+          return { id: sectionId, top: section.getBoundingClientRect().top }
+        }
+        return null
+      })
+
+      // Encontrar la sección más cercana a la parte superior de la vista
+      const nearestSection = positions.reduce((nearest, current) => {
+        if (!nearest) {
+          return current
+        }
+        if (current && Math.abs(current.top) < Math.abs(nearest.top)) {
+          return current
+        }
+        return nearest
+      }, null)
+
+      // Actualizar el path de la aplicación según la sección más cercana a la parte superior de la vista
+      if (nearestSection && nearestSection.top <= 0) {
+        window.history.pushState(null, '', `/#${nearestSection.id}`)
+      } else {
+        window.history.pushState(null, '', '/')
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <Layout>
-      <>Contenido</>
+      <div className='flex flex-col gap-2'>
+        <Experience />
+        <Projects />
+        <AboutMe />
+        <Contact />
+      </div>
     </Layout>
   )
 }
