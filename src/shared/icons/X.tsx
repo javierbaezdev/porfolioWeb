@@ -9,7 +9,6 @@ const X = ({ ...props }) => {
       fill='none'
       strokeLinecap='round'
       strokeLinejoin='round'
-      className='animate-fade-in'
       {...props}
     >
       <path

@@ -2,7 +2,10 @@ import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
 import { Language } from '@/shared/types/language'
 import { ThemeMode } from '@/shared/types/themeMode'
-import { LANGUAGE_DICT, THEME_MODE_DICT } from '@/shared/constants'
+import {
+  LANGUAGE_DICT_VARIABLES,
+  THEME_MODE_VARIABLES,
+} from '@/shared/constants'
 
 interface State {
   language: Language
@@ -16,8 +19,8 @@ export const useAppStore = create<State>()(
     persist(
       (set, get) => {
         return {
-          language: LANGUAGE_DICT.ES,
-          themeMode: THEME_MODE_DICT.DARK,
+          language: LANGUAGE_DICT_VARIABLES.ES,
+          themeMode: THEME_MODE_VARIABLES.DARK,
           onChangeLanguage: (lg) => {
             const { language } = get()
 

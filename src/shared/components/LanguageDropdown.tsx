@@ -1,20 +1,30 @@
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
-import { Chile, Us } from '@/shared/icons'
 import { useOpen } from '@/shared/hooks'
 import { useAppStore } from '@/store'
-import { LANGUAGE_DICT } from '@/shared/constants'
-import { Language } from '@/shared/types/language'
+import { RefObject, useEffect, useRef } from 'react'
+import { LANGUAGE_DICT } from '../data/es/language'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
 const LanguageDropdown = ({ className, ...rest }: Props) => {
   const { isOpen, onToggle, onClose } = useOpen()
   const { onChangeLanguage, language } = useAppStore((store) => store)
+  const refDropdown: RefObject<HTMLDivElement> = useRef(null)
 
-  const DICT: Record<Language, JSX.Element> = {
-    ES: <Chile />,
-  }
+  useEffect(() => {
+    const maybeHandler = (event: MouseEvent) => {
+      if (!refDropdown.current?.contains(event.target as Node)) {
+        onClose()
+      }
+    }
+
+    document.addEventListener('mousedown', maybeHandler)
+
+    return () => {
+      document.removeEventListener('mousedown', maybeHandler)
+    }
+  })
 
   return (
     <div className=''>
@@ -23,11 +33,12 @@ const LanguageDropdown = ({ className, ...rest }: Props) => {
           className='bg-transparent'
           onClick={onToggle}
         >
-          {DICT[language]}
+          {LANGUAGE_DICT[language].find((item) => item.key === language)?.icon}
         </button>
         {/* Dropdown */}
         {isOpen && (
           <div
+            ref={refDropdown}
             className={twMerge(
               clsx(
                 'fixed top-14 right-2 w-auto bg-bunker-900 text-bunker-300 rounded-md',
@@ -40,36 +51,20 @@ const LanguageDropdown = ({ className, ...rest }: Props) => {
               className='py-2 font-medium flex flex-col gap-4'
               role='none'
             >
-              <li>
-                <div
-                  className='flex flex-row gap-2 px-2 cursor-pointer'
-                  onClick={() => {
-                    /* onChangeLanguage(LANGUAGE_DICT.ES) */
-                    onClose()
-                  }}
-                >
-                  <Us
-                    width='20'
-                    height='20'
-                  />
-                  English (US)
-                </div>
-              </li>
-              <li>
-                <div
-                  className='flex flex-row gap-2 px-2 cursor-pointer'
-                  onClick={() => {
-                    onChangeLanguage(LANGUAGE_DICT.ES)
-                    onClose()
-                  }}
-                >
-                  <Chile
-                    width='20'
-                    height='20'
-                  />
-                  Español (CL)
-                </div>
-              </li>
+              {LANGUAGE_DICT[language].map(({ key, label, icon }) => (
+                <li key={key}>
+                  <div
+                    className='flex flex-row gap-2 px-2 cursor-pointer'
+                    onClick={() => {
+                      onChangeLanguage(key)
+                      onClose()
+                    }}
+                  >
+                    {icon}
+                    {label}
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         )}

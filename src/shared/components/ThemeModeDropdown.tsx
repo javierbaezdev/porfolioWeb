@@ -1,22 +1,32 @@
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
-import { DeviceImac, Moon, Sun } from '@/shared/icons'
 import { useOpen } from '@/shared/hooks'
+import { THEME_MODE_DICT } from '@/shared/data/es/themeMode'
 import { useAppStore } from '@/store'
-import { THEME_MODE_DICT } from '@/shared/constants'
-import { ThemeMode } from '@/shared/types/themeMode'
+import { RefObject, useEffect, useRef } from 'react'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
 const ThemeModeDropdown = ({ className, ...rest }: Props) => {
   const { isOpen, onToggle, onClose } = useOpen()
-  const { onChangeThemeMode, themeMode } = useAppStore((store) => store)
+  const { themeMode, onChangeThemeMode, language } = useAppStore(
+    (store) => store
+  )
+  const refDropdown: RefObject<HTMLDivElement> = useRef(null)
 
-  const DICT: Record<ThemeMode, JSX.Element> = {
-    DARK: <Moon />,
-    LIGHT: <Sun />,
-    SYSTEM: <DeviceImac />,
-  }
+  useEffect(() => {
+    const maybeHandler = (event: MouseEvent) => {
+      if (!refDropdown.current?.contains(event.target as Node)) {
+        onClose()
+      }
+    }
+
+    document.addEventListener('mousedown', maybeHandler)
+
+    return () => {
+      document.removeEventListener('mousedown', maybeHandler)
+    }
+  })
 
   return (
     <div className=''>
@@ -25,11 +35,15 @@ const ThemeModeDropdown = ({ className, ...rest }: Props) => {
           className='bg-transparent'
           onClick={onToggle}
         >
-          {DICT[themeMode]}
+          {
+            THEME_MODE_DICT[language].find((item) => item.key === themeMode)
+              ?.icon
+          }
         </button>
         {/* Dropdown */}
         {isOpen && (
           <div
+            ref={refDropdown}
             className={twMerge(
               clsx(
                 'fixed top-14 right-2 w-auto bg-bunker-900 text-bunker-300 rounded-md',
@@ -42,18 +56,17 @@ const ThemeModeDropdown = ({ className, ...rest }: Props) => {
               className='py-2 font-medium flex flex-col gap-4'
               role='none'
             >
-              {Object.values(THEME_MODE_DICT).map((v) => (
-                <li>
+              {THEME_MODE_DICT[language].map(({ icon, key, label }) => (
+                <li key={key}>
                   <div
-                    key={v}
                     className='flex flex-row gap-2 px-2 cursor-pointer'
                     onClick={() => {
-                      onChangeThemeMode(v)
+                      onChangeThemeMode(key)
                       onClose()
                     }}
                   >
-                    {DICT[v]}
-                    {v}
+                    {icon}
+                    {label}
                   </div>
                 </li>
               ))}
