@@ -4,12 +4,31 @@ import { LanguageDropdown, ThemeModeDropdown } from '@/shared/components'
 import BurgerDropdown from './BurgerDropdown'
 import { useAppStore } from '@/store'
 import { TABS } from '@/shared/data/es/tabs'
+import { useEffect, useState } from 'react'
 
 const NavBar = () => {
   const language = useAppStore((store) => store.language)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
   return (
     <header className='md:sticky top-2 flex flex-col md:justify-center items-center text-bunker-400 animate-fade-in'>
-      <nav className='gap-y-4 rounded-md py-4 static hidden md:flex flex-row items-center sm:divide-x sm:divide-bunker-400 sm:divide-dashed sm:py-0  '>
+      <nav
+        className={clsx(
+          'gap-y-4 rounded-md py-4 static hidden md:flex flex-row items-center sm:divide-x sm:divide-bunker-400 sm:divide-dashed sm:py-0',
+          { 'bg-old-lace-200 dark:bg-bunker-900': isScrolled }
+        )}
+      >
         {TABS[language].map((item, index) => (
           <TabItem
             key={item.href}
@@ -24,7 +43,6 @@ const NavBar = () => {
           />
         ))}
       </nav>
-      {/* TODO: dark mode and language mode buttons */}
       <div className='flex flex-row items-center justify-end gap-4 md:hidden pt-4 w-full'>
         <LanguageDropdown className='animate-fade-in-down top-14 right-2' />
         <ThemeModeDropdown className='animate-fade-in-down top-14 right-2' />

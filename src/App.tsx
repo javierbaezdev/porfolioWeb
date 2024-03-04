@@ -2,7 +2,13 @@ import Layout from '@/shared/Layout'
 import { useAppStore } from '@/store'
 import { useEffect } from 'react'
 import { SECTIONS_IDS, THEME_MODE_VARIABLES } from '@/shared/constants'
-import { Experience, Projects, AboutMe, Contact } from './pages/sections'
+import {
+  Experience,
+  Projects,
+  AboutMe,
+  Contact,
+  Presentation,
+} from './pages/sections'
 
 const App = () => {
   const themeMode = useAppStore((store) => store.themeMode)
@@ -64,7 +70,8 @@ const App = () => {
 
   return (
     <Layout>
-      <div className='flex flex-col gap-2'>
+      <div className='flex flex-col gap-2 mt-20'>
+        <Presentation />
         <Experience />
         <Projects />
         <AboutMe />
