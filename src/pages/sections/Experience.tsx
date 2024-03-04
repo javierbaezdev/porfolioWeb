@@ -1,4 +1,4 @@
-import { SECTIONS_IDS } from '@/shared/constants'
+import { SECTIONS_IDS } from '@/shared/data/constants'
 
 const Experience = () => {
   return <section id={SECTIONS_IDS.at(0)}>experience</section>

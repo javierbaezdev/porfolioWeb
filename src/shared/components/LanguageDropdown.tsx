@@ -1,15 +1,16 @@
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
-import { useOpen } from '@/shared/hooks'
+import { useAllData, useOpen } from '@/shared/hooks'
 import { useAppStore } from '@/store'
 import { RefObject, useEffect, useRef } from 'react'
-import { LANGUAGE_DICT } from '../data/es/language'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
 const LanguageDropdown = ({ className, ...rest }: Props) => {
   const { isOpen, onToggle, onClose } = useOpen()
+  const { allData } = useAllData()
   const { onChangeLanguage, language } = useAppStore((store) => store)
+
   const refDropdown: RefObject<HTMLDivElement> = useRef(null)
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const LanguageDropdown = ({ className, ...rest }: Props) => {
           className='bg-transparent hover:scale-110'
           onClick={onToggle}
         >
-          {LANGUAGE_DICT[language].find((item) => item.key === language)?.icon}
+          {allData.languageOptions.find((item) => item.key === language)?.icon}
         </button>
         {/* Dropdown */}
         {isOpen && (
@@ -51,7 +52,7 @@ const LanguageDropdown = ({ className, ...rest }: Props) => {
               className='py-2 font-medium flex flex-col gap-4'
               role='none'
             >
-              {LANGUAGE_DICT[language].map(({ key, label, icon }) => (
+              {allData.languageOptions.map(({ key, label, icon }) => (
                 <li key={key}>
                   <div
                     className='flex flex-row gap-2 px-2 cursor-pointer'

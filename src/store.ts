@@ -5,7 +5,7 @@ import { ThemeMode } from '@/shared/types/themeMode'
 import {
   LANGUAGE_DICT_VARIABLES,
   THEME_MODE_VARIABLES,
-} from '@/shared/constants'
+} from '@/shared/data/constants'
 
 interface State {
   language: Language

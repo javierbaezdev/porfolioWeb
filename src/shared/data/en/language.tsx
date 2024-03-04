@@ -4,7 +4,7 @@ import { LANGUAGE_DICT_VARIABLES } from '../constants'
 
 export const LANGUAGE_DICT: LanguageDictItem[] = [
   {
-    label: 'Español (CL)',
+    label: 'Spanish (CL)',
     key: LANGUAGE_DICT_VARIABLES.ES,
     icon: (
       <Chile
@@ -14,7 +14,7 @@ export const LANGUAGE_DICT: LanguageDictItem[] = [
     ),
   },
   {
-    label: 'Inglés (US)',
+    label: 'English (US)',
     key: LANGUAGE_DICT_VARIABLES.EN,
     icon: (
       <Us

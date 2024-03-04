@@ -2,12 +2,11 @@ import TabItem from './TabItem'
 import { clsx } from 'clsx'
 import { LanguageDropdown, ThemeModeDropdown } from '@/shared/components'
 import BurgerDropdown from './BurgerDropdown'
-import { useAppStore } from '@/store'
-import { TABS } from '@/shared/data/es/tabs'
 import { useEffect, useState } from 'react'
+import { useAllData } from '../hooks'
 
 const NavBar = () => {
-  const language = useAppStore((store) => store.language)
+  const { allData } = useAllData()
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -29,7 +28,7 @@ const NavBar = () => {
           { 'bg-old-lace-200 dark:bg-bunker-900': isScrolled }
         )}
       >
-        {TABS[language].map((item, index) => (
+        {allData.tabs.map((item, index) => (
           <TabItem
             key={item.href}
             href={item.href}

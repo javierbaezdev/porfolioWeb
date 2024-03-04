@@ -1,7 +1,6 @@
 import Layout from '@/shared/Layout'
 import { useAppStore } from '@/store'
 import { useEffect } from 'react'
-import { SECTIONS_IDS, THEME_MODE_VARIABLES } from '@/shared/constants'
 import {
   Experience,
   Projects,
@@ -9,6 +8,7 @@ import {
   Contact,
   Presentation,
 } from './pages/sections'
+import { SECTIONS_IDS, THEME_MODE_VARIABLES } from '@/shared/data/constants'
 
 const App = () => {
   const themeMode = useAppStore((store) => store.themeMode)
