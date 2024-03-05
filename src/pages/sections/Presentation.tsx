@@ -25,10 +25,12 @@ const Presentation = () => {
           src={allData.me.IMAGES.AVATAR_MIN}
         />
         <div className='flex flex-col gap-2'>
-          <h1 className='text-4xl font-extrabold'>
+          <h1 className='text-4xl font-extrabold text-rock-900 dark:text-bunker-50'>
             {allData.presentation.GREETINGS} {allData.me.NAME}
           </h1>
-          <p className='text-pretty'>{allData.me.DESCRIPTION}</p>
+          <p className='text-pretty text-rock-600 dark:text-bunker-400'>
+            {allData.me.DESCRIPTION}
+          </p>
         </div>
       </div>
       {/* --- */}
