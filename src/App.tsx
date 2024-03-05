@@ -70,7 +70,7 @@ const App = () => {
 
   return (
     <Layout>
-      <div className='flex flex-col gap-2 mt-20'>
+      <div className='flex flex-col gap-2 md:mt-20'>
         <Presentation />
         <Experience />
         <Projects />

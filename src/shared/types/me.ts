@@ -1,6 +1,7 @@
+export type ContactType = 'HREF' | 'EMAIL'
 interface Contact {
   LABEL: string
-  TYPE: 'HREF' | 'EMAIL'
+  TYPE: ContactType
   VALUE: string
   ICON: JSX.Element
 }

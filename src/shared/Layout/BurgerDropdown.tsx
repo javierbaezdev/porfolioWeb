@@ -51,7 +51,7 @@ const BurgerDropdown = ({ className, ...rest }: Props) => {
             ref={refDropdown}
             className={twMerge(
               clsx(
-                'fixed top-14 w-full right-0 bg-bunker-900 text-bunker-300 rounded-md',
+                'fixed top-14 w-full right-0 bg-bunker-900 text-bunker-300 rounded-md z-50',
                 className
               )
             )}

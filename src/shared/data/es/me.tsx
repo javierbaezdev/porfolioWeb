@@ -1,5 +1,6 @@
 import { MeFullImage, MeMinImage } from '@/assets/images'
 import { ChakraLogo, ReactLogo, ZustandLogo } from '@/assets/logos'
+import { Linkedin, Mail } from '@/shared/icons'
 import { Me } from '@/shared/types/me'
 
 export const ME: Me = {
@@ -17,13 +18,13 @@ export const ME: Me = {
       LABEL: 'Linkedin',
       TYPE: 'HREF',
       VALUE: 'https://www.linkedin.com/in/javierbaezdev/',
-      ICON: <></>,
+      ICON: <Linkedin />,
     },
     {
       LABEL: 'Contáctame',
       TYPE: 'EMAIL',
       VALUE: 'javierbaez.dev@gmail.com',
-      ICON: <></>,
+      ICON: <Mail />,
     },
   ],
   EXPERIENCE: [

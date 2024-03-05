@@ -42,7 +42,7 @@ const LanguageDropdown = ({ className, ...rest }: Props) => {
             ref={refDropdown}
             className={twMerge(
               clsx(
-                'fixed w-auto bg-bunker-900 text-bunker-300 rounded-md',
+                'fixed w-auto bg-bunker-900 text-bunker-300 rounded-md z-50',
                 className
               )
             )}
