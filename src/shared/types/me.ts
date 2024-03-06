@@ -17,16 +17,17 @@ interface Experience {
   COMPANY: string
   DESCRIPTION: string
   DATE_RANGE: string
-  IMAGE: string
 }
 
-interface Project {
+export interface Project {
   TITLE: string
   DESCRIPTION: string
   CODE_HREF?: string
   PREVIEW_HREF: string
-  ICON: JSX.Element
+  ICON: string
   TECHNOLOGIES: Technology[]
+  IMAGE: string
+  GIF?: string
 }
 
 interface Images {

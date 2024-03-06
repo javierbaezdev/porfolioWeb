@@ -1,3 +1,4 @@
+import { ProjectsComponent } from './projects'
 import { FooterComponent } from './footer'
 import { LanguageDictItem } from './language'
 import { Me } from './me'
@@ -11,5 +12,6 @@ export interface AllData {
   languageOptions: LanguageDictItem[]
   themeModeOptions: ThemeModeDictItem[]
   presentation: PresentationComponent
+  projects: ProjectsComponent
   footer: FooterComponent
 }

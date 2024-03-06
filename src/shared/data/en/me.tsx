@@ -1,5 +1,18 @@
-import { MeFullImage, MeMinImage } from '@/assets/images'
-import { ChakraLogo, ReactLogo, ZustandLogo } from '@/assets/logos'
+import {
+  MeFullImage,
+  MeMinImage,
+  kumoTask_webp,
+  cvBuilder_webp,
+  cvBuilder_gif,
+  kumoTask_gif,
+} from '@/assets/images'
+import {
+  ChakraLogo,
+  ReactLogo,
+  ZustandLogo,
+  kumoTaskLogo,
+  cvBuilderLogo,
+} from '@/assets/logos'
 import { Linkedin, Mail } from '@/shared/icons'
 import { Me } from '@/shared/types/me'
 
@@ -34,7 +47,6 @@ export const ME: Me = {
       DESCRIPTION:
         'Participé en varios proyectos full stack donde desarrollé soluciones personalizadas para empresas. Estas aplicaciones fueron diseñadas para ser escalables y eficientes, utilizando servicios en la nube para optimizar su rendimiento y escalabilidad. Mi papel abarcó desde la conceptualización hasta la implementación y mantenimiento de estas soluciones, asegurando que cumplieran con los requisitos del cliente y proporcionaran un valor añadido a sus operaciones comerciales.',
       DATE_RANGE: 'sept/2021 - feb/2024',
-      IMAGE: '',
     },
     {
       POSITION: 'Desarrollador Full Stack',
@@ -42,7 +54,6 @@ export const ME: Me = {
       DESCRIPTION:
         'Responsable de desarrollar una aplicación full stack que integraba una Raspberry Pi con interruptores inalámbricos. Esta aplicación tenía como objetivo ayudar a niños con dificultades de comunicación limitada a expresarse de manera más efectiva. Mi papel fue diseñar, desarrollar y mantener esta solución tecnológica, asegurando su funcionalidad y accesibilidad para los usuarios finales.',
       DATE_RANGE: 'ago/2021 - dic/2021',
-      IMAGE: '',
     },
   ],
   PROJECTS: [
@@ -52,13 +63,8 @@ export const ME: Me = {
         'Kumo Tasks es una aplicación de gestión de tareas simplificada que te permite crear tableros para diferentes proyectos y organizar tus tareas de manera efectiva.',
       CODE_HREF: 'https://github.com/javierbaezdev/kumoTasks',
       PREVIEW_HREF: 'https://kumo-tasks.vercel.app/projects',
-      ICON: <></>,
+      ICON: kumoTaskLogo,
       TECHNOLOGIES: [
-        {
-          LABEL: 'Chakra UI',
-          ICON: ChakraLogo,
-          COLOR: 'cyan',
-        },
         {
           LABEL: 'React',
           ICON: ReactLogo,
@@ -69,7 +75,14 @@ export const ME: Me = {
           ICON: ZustandLogo,
           COLOR: 'red',
         },
+        {
+          LABEL: 'Chakra UI',
+          ICON: ChakraLogo,
+          COLOR: 'cyan',
+        },
       ],
+      IMAGE: kumoTask_webp,
+      GIF: kumoTask_gif,
     },
     {
       TITLE: 'Cv Builder',
@@ -77,13 +90,8 @@ export const ME: Me = {
         'Cv Builder es una aplicación que te permite crear y personalizar tu currículum vitae en inglés y español, exportándolo fácilmente a formato PDF.',
       CODE_HREF: 'https://github.com/javierbaezdev/profileBuilder',
       PREVIEW_HREF: 'https://profile-builder-ten.vercel.app/builder',
-      ICON: <></>,
+      ICON: cvBuilderLogo,
       TECHNOLOGIES: [
-        {
-          LABEL: 'Chakra UI',
-          ICON: ChakraLogo,
-          COLOR: 'cyan',
-        },
         {
           LABEL: 'React',
           ICON: ReactLogo,
@@ -94,7 +102,14 @@ export const ME: Me = {
           ICON: ZustandLogo,
           COLOR: 'red',
         },
+        {
+          LABEL: 'Chakra UI',
+          ICON: ChakraLogo,
+          COLOR: 'cyan',
+        },
       ],
+      IMAGE: cvBuilder_webp,
+      GIF: cvBuilder_gif,
     },
   ],
   IMAGES: {

@@ -1,4 +1,5 @@
 export { default as ChakraLogo } from './Chakra.png'
-export { default as GitHubLogo } from './GitHub.png'
 export { default as ReactLogo } from './React.png'
 export { default as ZustandLogo } from './Zustand.png'
+export { default as kumoTaskLogo } from './min_logo.svg'
+export { default as cvBuilderLogo } from './min.svg'
