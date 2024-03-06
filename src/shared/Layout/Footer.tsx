@@ -4,7 +4,7 @@ import { useAllData } from '@/shared/hooks'
 const Footer = () => {
   const { allData } = useAllData()
   return (
-    <footer className='flex flex-row justify-between items-end mt-auto mb-10 border-t-2 border-dashed border-bunker-300'>
+    <footer className='flex flex-row justify-between items-end mt-auto mb-10 border-t-2 border-dashed border-bunker-300 px-2 md:px-0'>
       <div className='w-full'>
         <p className='text-xs'>{allData.footer.TEXT}</p>
       </div>

@@ -28,7 +28,7 @@ const TabItem = ({ href, label, className, ...rest }: Props) => {
       href={href}
       className={twMerge(
         clsx('px-4 py-4 sm:py-0 sm:hover:underline', className, {
-          'text-biscay-300': currentPath === href,
+          'text-carissma-600 dark:text-carissma-300': currentPath === href,
         })
       )}
       {...rest}
