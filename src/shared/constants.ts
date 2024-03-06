@@ -1,6 +1,5 @@
 import { Language } from '@/shared/types/language'
-import { AllData } from '@/shared/types/allData'
-
+import { AllData } from '@/shared/types/AllData'
 // es
 import { ME } from '@/shared/data/es/me'
 import { TABS } from './data/es/tabs'
