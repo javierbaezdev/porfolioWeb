@@ -28,7 +28,7 @@ const ProjectCard = ({ project, invert }: Props) => {
         <img
           className={twMerge(
             clsx(
-              ' object-cover aspect-video rounded-lg object-top max-h-[313px] animate-delay-300',
+              ' object-cover aspect-auto rounded-lg object-top max-h-[313px] animate-delay-300',
               {
                 'animate-slide-in-left': !invert,
                 'animate-slide-in-right': invert,
@@ -44,7 +44,7 @@ const ProjectCard = ({ project, invert }: Props) => {
           <div
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
-            className='animate-fade-in absolute bottom-0 md:bottom-4 flex flex-row gap-2 items-center font-bold bg-rock-800 dark:bg-bunker-800 text-rock-200 dark:text-bunker-50 p-2 bg-opacity-30 dark:bg-opacity-30 rounded-md w-full'
+            className='animate-fade-in absolute bottom-0 flex flex-row gap-2 items-center font-bold bg-rock-800 dark:bg-bunker-800 text-rock-200 dark:text-bunker-50 p-2 bg-opacity-30 dark:bg-opacity-30 rounded-md w-full'
           >
             <img
               className='object-cover max-w-10 scale-75 border-1'
