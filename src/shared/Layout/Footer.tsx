@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className='flex flex-row justify-between items-end mt-auto mb-10 border-t-2 border-dashed border-bunker-300 px-2 md:px-0'>
       <div className='w-full'>
-        <p className='text-xs text-center md:text-start'>
+        <p className='text-xs text-center text-rock-600 dark:text-bunker-400 md:text-start'>
           {allData.footer.TEXT}
         </p>
       </div>
