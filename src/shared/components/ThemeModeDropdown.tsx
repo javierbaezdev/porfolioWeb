@@ -3,7 +3,6 @@ import { twMerge } from 'tailwind-merge'
 import { useAllData, useOpen } from '@/shared/hooks'
 import { useAppStore } from '@/store'
 import { RefObject, useEffect, useRef } from 'react'
-import { THEME_MODE_DICT } from '../data/es/themeMode'
 import { THEME_MODE_VARIABLES } from '../data/constants'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
