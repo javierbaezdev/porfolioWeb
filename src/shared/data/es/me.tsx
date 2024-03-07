@@ -62,7 +62,7 @@ export const ME: Me = {
       DESCRIPTION:
         'Kumo Tasks es una aplicación de gestión de tareas simplificada que te permite crear tableros para diferentes proyectos y organizar tus tareas de manera efectiva.',
       CODE_HREF: 'https://github.com/javierbaezdev/kumoTasks',
-      PREVIEW_HREF: 'https://kumo-tasks.vercel.app/projects',
+      PREVIEW_HREF: 'https://kumotasks.pages.dev',
       ICON: kumoTaskLogo,
       TECHNOLOGIES: [
         {
@@ -89,7 +89,7 @@ export const ME: Me = {
       DESCRIPTION:
         'Cv Builder es una aplicación que te permite crear y personalizar tu currículum vitae en inglés y español, exportándolo fácilmente a formato PDF.',
       CODE_HREF: 'https://github.com/javierbaezdev/profileBuilder',
-      PREVIEW_HREF: 'https://profile-builder-ten.vercel.app/builder',
+      PREVIEW_HREF: 'https://profilebuilder.pages.dev',
       ICON: cvBuilderLogo,
       TECHNOLOGIES: [
         {

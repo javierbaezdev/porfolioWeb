@@ -1,4 +1,4 @@
-export { default as MeFullImage } from './meFull.webp'
+export { default as MeFullImage } from './me_chibi.webp'
 export { default as MeMinImage } from './meMin.webp'
 export { default as cvBuilder_webp } from './cvBuilder_1.webp'
 export { default as cvBuilder_gif } from './cvBuilder_2.gif'

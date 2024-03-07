@@ -5,20 +5,28 @@ import BurgerDropdown from './BurgerDropdown'
 import { useEffect, useState } from 'react'
 import { useAllData } from '../hooks'
 import { CircleChevronUp } from '../icons'
+import { useAppStore } from '@/store'
 
 const NavBar = () => {
   const { allData } = useAllData()
+  const onChangeSectionHash = useAppStore((store) => store.onChangeSectionHash)
   const [isScrolled, setIsScrolled] = useState(false)
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
     })
+    history.replaceState(null, '', window.location.origin)
+    onChangeSectionHash('')
   }
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0)
+      if (window.scrollY <= 0) {
+        history.replaceState(null, '', window.location.origin)
+        onChangeSectionHash('')
+      }
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -27,6 +35,7 @@ const NavBar = () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
+
   return (
     <>
       <header className='hidden md:sticky top-2 md:flex flex-col md:justify-center items-center text-bunker-400 animate-fade-in z-[9999]'>

@@ -10,8 +10,10 @@ import {
 interface State {
   language: Language
   themeMode: ThemeMode
+  currentSection: string
   onChangeLanguage: (language: Language) => void
   onChangeThemeMode: (mode: ThemeMode) => void
+  onChangeSectionHash: (hash: string) => void
 }
 
 export const useAppStore = create<State>()(
@@ -21,6 +23,16 @@ export const useAppStore = create<State>()(
         return {
           language: LANGUAGE_DICT_VARIABLES.ES,
           themeMode: THEME_MODE_VARIABLES.DARK,
+          currentSection: '',
+          onChangeSectionHash: (hash) => {
+            const { currentSection } = get()
+
+            if (currentSection !== hash) {
+              set({
+                currentSection: hash,
+              })
+            }
+          },
           onChangeLanguage: (lg) => {
             const { language } = get()
 

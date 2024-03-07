@@ -1,12 +1,17 @@
+import { useAppStore } from '@/store'
 import { useState, useEffect, useRef } from 'react'
 
 interface IntersectionOptions {
   rootMargin?: string
+  sectionId?: string
 }
 
-const useOnScreen = ({ rootMargin = '0px' }: IntersectionOptions = {}) => {
+const useOnScreen = ({
+  rootMargin = '0px',
+  sectionId,
+}: IntersectionOptions = {}) => {
+  const onChangeSectionHash = useAppStore((store) => store.onChangeSectionHash)
   const [isIntersecting, setIsIntersecting] = useState(false)
-  const [hasIntersected, setHasIntersected] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -15,9 +20,8 @@ const useOnScreen = ({ rootMargin = '0px' }: IntersectionOptions = {}) => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!hasIntersected && entry.isIntersecting) {
+        if (entry.isIntersecting) {
           setIsIntersecting(true)
-          setHasIntersected(true)
           observer.unobserve(element) // Detener la observación después de la primera intersección
         }
       },
@@ -31,9 +35,18 @@ const useOnScreen = ({ rootMargin = '0px' }: IntersectionOptions = {}) => {
         observer.unobserve(element)
       }
     }
-  }, [ref.current, rootMargin, hasIntersected])
+  }, [ref.current, rootMargin])
 
-  return { ref, isIntersecting, hasIntersected }
+  useEffect(() => {
+    if (isIntersecting) {
+      onChangeSectionHash(`#${sectionId}`)
+      if (sectionId) {
+        window.location.hash = sectionId
+      }
+    }
+  }, [isIntersecting])
+
+  return { ref, isIntersecting }
 }
 
 export default useOnScreen

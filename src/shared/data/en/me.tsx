@@ -19,12 +19,12 @@ import { Me } from '@/shared/types/me'
 export const ME: Me = {
   NAME: 'Javier Báez',
   DESCRIPTION:
-    'Full Stack Web Developer con 2+ años de experiencia en Santiago de Chile. Especializado en el desarrollo de aplicaciones web con enfoque en la experiencia del usuario y diseño de alta calidad.',
+    'Full Stack Web Developer with 2+ years of experience in Santiago, Chile. Specialized in web application development with a focus on user experience and high-quality design.',
   ABOUT_ME: [
-    '¡Hola! Soy Javier Fuenzalida, aunque prefiero utilizar mi segundo apellido como se puede apreciar al inicio de la web.',
-    'Durante aproximadamente 10 años, estuve inmerso en el mundo del diseño y el tatuaje, una experiencia que valoro mucho.',
-    'Sin embargo, mi curiosidad por la programación me llevó a dar un giro inesperado a mi carrera. Gracias a algunas amistades, me adentré en este fascinante mundo y descubrí una pasión completamente nueva.',
-    'Ahora estoy dedicando todo mi esfuerzo a crecer y mejorar en este campo. ¡Bienvenido a mi espacio en la web!"',
+    "Hello! I'm Javier Fuenzalida, although I prefer to use my second surname as can be seen at the beginning of the website.",
+    'For approximately 10 years, I was immersed in the world of design and tattooing, an experience that I highly value.',
+    'However, my curiosity about programming led me to take an unexpected turn in my career. Thanks to some friendships, I delved into this fascinating world and discovered a completely new passion.',
+    'Now I am dedicating all my effort to grow and improve in this field. Welcome to my space on the web!',
   ],
   CONTACTS: [
     {
@@ -34,7 +34,7 @@ export const ME: Me = {
       ICON: <Linkedin />,
     },
     {
-      LABEL: 'Contáctame',
+      LABEL: 'Contact me',
       TYPE: 'EMAIL',
       VALUE: 'javierbaez.dev@gmail.com',
       ICON: <Mail />,
@@ -42,27 +42,27 @@ export const ME: Me = {
   ],
   EXPERIENCE: [
     {
-      POSITION: 'Desarrollador Full Stack',
+      POSITION: 'Full Stack Developer',
       COMPANY: 'ForEach',
       DESCRIPTION:
-        'Participé en varios proyectos full stack donde desarrollé soluciones personalizadas para empresas. Estas aplicaciones fueron diseñadas para ser escalables y eficientes, utilizando servicios en la nube para optimizar su rendimiento y escalabilidad. Mi papel abarcó desde la conceptualización hasta la implementación y mantenimiento de estas soluciones, asegurando que cumplieran con los requisitos del cliente y proporcionaran un valor añadido a sus operaciones comerciales.',
-      DATE_RANGE: 'sept/2021 - feb/2024',
+        'I participated in several full-stack projects where I developed customized solutions for companies. These applications were designed to be scalable and efficient, using cloud services to optimize their performance and scalability. My role ranged from conceptualization to implementation and maintenance of these solutions, ensuring they met client requirements and provided added value to their business operations.',
+      DATE_RANGE: 'Sep/2021 - Feb/2024',
     },
     {
-      POSITION: 'Desarrollador Full Stack',
+      POSITION: 'Full Stack Developer',
       COMPANY: 'Duoc UC',
       DESCRIPTION:
-        'Responsable de desarrollar una aplicación full stack que integraba una Raspberry Pi con interruptores inalámbricos. Esta aplicación tenía como objetivo ayudar a niños con dificultades de comunicación limitada a expresarse de manera más efectiva. Mi papel fue diseñar, desarrollar y mantener esta solución tecnológica, asegurando su funcionalidad y accesibilidad para los usuarios finales.',
-      DATE_RANGE: 'ago/2021 - dic/2021',
+        'Responsible for developing a full-stack application that integrated a Raspberry Pi with wireless switches. This application aimed to help children with limited communication difficulties express themselves more effectively. My role was to design, develop, and maintain this technological solution, ensuring its functionality and accessibility for end users.',
+      DATE_RANGE: 'Aug/2021 - Dec/2021',
     },
   ],
   PROJECTS: [
     {
       TITLE: 'Kumo Tasks',
       DESCRIPTION:
-        'Kumo Tasks es una aplicación de gestión de tareas simplificada que te permite crear tableros para diferentes proyectos y organizar tus tareas de manera efectiva.',
+        'Kumo Tasks is a simplified task management application that allows you to create boards for different projects and organize your tasks effectively.',
       CODE_HREF: 'https://github.com/javierbaezdev/kumoTasks',
-      PREVIEW_HREF: 'https://kumo-tasks.vercel.app/projects',
+      PREVIEW_HREF: 'https://kumotasks.pages.dev',
       ICON: kumoTaskLogo,
       TECHNOLOGIES: [
         {
@@ -87,9 +87,9 @@ export const ME: Me = {
     {
       TITLE: 'Cv Builder',
       DESCRIPTION:
-        'Cv Builder es una aplicación que te permite crear y personalizar tu currículum vitae en inglés y español, exportándolo fácilmente a formato PDF.',
+        'Cv Builder is an application that allows you to create and customize your resume in English and Spanish, easily exporting it to PDF format.',
       CODE_HREF: 'https://github.com/javierbaezdev/profileBuilder',
-      PREVIEW_HREF: 'https://profile-builder-ten.vercel.app/builder',
+      PREVIEW_HREF: 'https://profilebuilder.pages.dev',
       ICON: cvBuilderLogo,
       TECHNOLOGIES: [
         {
