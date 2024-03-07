@@ -3,6 +3,8 @@ import { twMerge } from 'tailwind-merge'
 import { useAllData, useOpen } from '@/shared/hooks'
 import { useAppStore } from '@/store'
 import { RefObject, useEffect, useRef } from 'react'
+import { THEME_MODE_DICT } from '../data/es/themeMode'
+import { THEME_MODE_VARIABLES } from '../data/constants'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -30,7 +32,12 @@ const ThemeModeDropdown = ({ className, ...rest }: Props) => {
     <div className=''>
       <div className='flex items-center'>
         <button
-          className='bg-transparent hover:scale-110'
+          className={twMerge(
+            clsx('bg-transparent hover:!scale-110 ', {
+              'animate-rotate-in': themeMode === THEME_MODE_VARIABLES.DARK,
+              'animate-rotate-90': themeMode === THEME_MODE_VARIABLES.LIGHT,
+            })
+          )}
           onClick={onToggle}
         >
           {

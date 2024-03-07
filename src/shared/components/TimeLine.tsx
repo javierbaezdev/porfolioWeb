@@ -25,7 +25,10 @@ const TimeLine = ({ items }: Props) => {
           onClickButton,
           textButton,
         }) => (
-          <li className='mb-10 ms-4'>
+          <li
+            className='mb-10 ms-4'
+            key={firsTitle + secondTitle}
+          >
             <div className='absolute w-3 h-3 bg-old-lace-300 rounded-full mt-1.5 -start-1.5 border border-bunker-50 dark:border-bunker-900 dark:bg-bunker-700'></div>
             <time className='mb-1 text-sm font-normal leading-none text-rock-900 dark:text-bunker-500'>
               {dateRange}
