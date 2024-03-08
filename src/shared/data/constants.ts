@@ -1,7 +1,7 @@
 import { Language } from '../types/language'
 import { ThemeMode } from '../types/themeMode'
 
-export const SECTIONS_IDS = ['experience', 'projects', 'about-me', 'contact']
+export const SECTIONS_IDS = ['experience', 'projects', 'about-me', 'skills']
 
 export const THEME_MODE_VARIABLES: Record<ThemeMode, ThemeMode> = {
   DARK: 'DARK',

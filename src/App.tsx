@@ -1,7 +1,13 @@
 import Layout from '@/shared/Layout'
 import { useAppStore } from '@/store'
 import { useEffect } from 'react'
-import { Experience, Projects, AboutMe, Presentation } from './pages/sections'
+import {
+  Experience,
+  Projects,
+  AboutMe,
+  Presentation,
+  Skills,
+} from './pages/sections'
 import { THEME_MODE_VARIABLES } from '@/shared/data/constants'
 
 const App = () => {
@@ -32,6 +38,7 @@ const App = () => {
         <Experience />
         <Projects />
         <AboutMe />
+        <Skills />
       </div>
     </Layout>
   )

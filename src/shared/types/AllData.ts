@@ -14,4 +14,5 @@ export interface AllData {
   presentation: PresentationComponent
   projects: ProjectsComponent
   footer: FooterComponent
+  skills: string[]
 }

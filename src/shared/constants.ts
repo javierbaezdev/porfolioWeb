@@ -8,6 +8,7 @@ import { THEME_MODE_DICT } from './data/es/themeMode'
 import { PRESENTATION } from '@/shared/data/es/sections/presentation'
 import { PROJECTS } from './data/es/sections/projects'
 import { FOOTER } from '@/shared/data/es/sections/footer'
+import { SKILLS } from '@/shared/data/es/skills'
 
 // en
 import { ME as ME_EN } from '@/shared/data/en/me'
@@ -17,6 +18,7 @@ import { THEME_MODE_DICT as THEME_MODE_DICT_EN } from './data/en/themeMode'
 import { PRESENTATION as PRESENTATION_EN } from '@/shared/data/en/sections/presentation'
 import { PROJECTS as PROJECTS_EN } from './data/en/sections/projects'
 import { FOOTER as FOOTER_EN } from '@/shared/data/en/sections/footer'
+import { SKILLS as SKILLS_EN } from '@/shared/data/en/skills'
 
 /* --- */
 
@@ -29,6 +31,7 @@ export const DATA: Record<Language, AllData> = {
     presentation: PRESENTATION,
     projects: PROJECTS,
     footer: FOOTER,
+    skills: SKILLS,
   },
   EN: {
     me: ME_EN,
@@ -38,5 +41,6 @@ export const DATA: Record<Language, AllData> = {
     presentation: PRESENTATION_EN,
     projects: PROJECTS_EN,
     footer: FOOTER_EN,
+    skills: SKILLS_EN,
   },
 }
