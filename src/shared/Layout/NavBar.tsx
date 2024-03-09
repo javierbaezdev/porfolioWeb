@@ -60,7 +60,7 @@ const NavBar = () => {
           ))}
           {isScrolled && (
             <button
-              className='hidden md:flex items-center px-2 bg-transparent animate-flip-y'
+              className='hidden md:flex items-center px-2 bg-transparent animate-fade-in'
               onClick={() => scrollToTop()}
             >
               <CircleChevronUp />
